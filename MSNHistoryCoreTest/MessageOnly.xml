@@ -6,6 +6,7 @@
       <User FriendlyName="Jerry"/>
     </From>
     <To>
+      <User FriendlyName="Hyperion"/>
       <User FriendlyName="Hargen"/>
     </To>
     <Text Style="font-family:Segoe UI; color:#000000; ">这两天过得好吗</Text>

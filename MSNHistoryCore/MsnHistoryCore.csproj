@@ -41,7 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HistoryXmlReader.cs" />
+    <Compile Include="MsnDirection.cs" />
+    <Compile Include="MsnDirectionType.cs" />
+    <Compile Include="MsnInvitationMessage.cs" />
+    <Compile Include="MsnInvitationResponseMessage.cs" />
     <Compile Include="MsnLog.cs" />
+    <Compile Include="MsnMessage.cs" />
+    <Compile Include="MsnText.cs" />
+    <Compile Include="MsnTextMessage.cs" />
+    <Compile Include="MsnUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

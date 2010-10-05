@@ -23,14 +23,38 @@ namespace MsnHistoryCore
             if (File.Exists(msnHistoryFile) == false) throw new FileNotFoundException("Can not find file" + msnHistoryFile);
 
             var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(msnHistoryFile);
+            var xmlReader = new XmlTextReader(msnHistoryFile);
+            xmlDoc.Load(xmlReader);
 
             var log = new MsnLog();
-            var logNode = xmlDoc.SelectSingleNode("Log");
-            //log = logNode.Attributes[log.FirstSessionID]
 
-            return null;
+            ReadHead(xmlDoc, log);
+
+            ReadLogBasicProperty(xmlDoc, log);
+
+            var messages = xmlDoc.SelectNodes("Log/Message");
+            foreach (XmlNode message in messages)
+            {
+                log.Messages.Add(new MsnTextMessage(message));
+            }
+
+            return log;
         }
+
+        private static void ReadHead(XmlDocument xmlDoc, MsnLog log)
+        {
+            log.Declaration = xmlDoc.FirstChild as XmlDeclaration;
+            log.Xsl = xmlDoc.FirstChild.NextSibling as XmlProcessingInstruction;
+        }
+
+        private static void ReadLogBasicProperty(XmlDocument xmlDoc, MsnLog log)
+        {
+            var logNode = xmlDoc.SelectSingleNode("Log");
+            log.FirstSessionID = int.Parse(logNode.Attributes["FirstSessionID"].Value);
+            log.LastSessionID = int.Parse(logNode.Attributes["LastSessionID"].Value);
+        }
+
+       
 
     }
 }
