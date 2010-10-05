@@ -12,6 +12,7 @@ namespace MsnHistoryCore
     {
         public XmlDeclaration Declaration { get; set; }
         public XmlProcessingInstruction Xsl { get; set; }
+        public string XmlFilePath { get; set; }
 
         public int FirstSessionID { get; set; }
 

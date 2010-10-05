@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HistoryXmlReaderTests.cs" />
+    <Compile Include="MsnExtensionsTests.cs" />
+    <Compile Include="MsnHistoryFileScannerTests.cs" />
     <Compile Include="MsnMessageFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

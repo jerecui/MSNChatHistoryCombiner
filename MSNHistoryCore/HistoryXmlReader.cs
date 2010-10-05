@@ -7,15 +7,12 @@ using System.IO;
 
 namespace MsnHistoryCore
 {
-    public class HistoryXmlReader
+    public class HistoryXmlReader:SingletonBase<HistoryXmlReader>
     {
-        public static HistoryXmlReader Instance
+        public HistoryXmlReader()
         {
-            get
-            {
-                return _instance;
-            }
-        } private static HistoryXmlReader _instance = new HistoryXmlReader();
+
+        }
 
         public MsnLog Read(string msnHistoryFile)
         {
@@ -26,7 +23,7 @@ namespace MsnHistoryCore
             var xmlReader = new XmlTextReader(msnHistoryFile);
             xmlDoc.Load(xmlReader);
 
-            var log = new MsnLog();
+            var log = new MsnLog(){XmlFilePath = new FileInfo(msnHistoryFile).FullName};
             ReadHead(xmlDoc, log);
 
             var rootNode = ReadLogBasicProperty(xmlDoc, log);
