@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='MessageLog.xsl'?>
+<Log FirstSessionID="1" LastSessionID="1">
+  <Invitation Date="2/4/2010" Time="2:37:42 PM" DateTime="2010-02-04T06:37:42.403Z" SessionID="1">
+    <From>
+      <User FriendlyName="Hargen"/>
+    </From>
+    <File>3ut18.tmp.jpg</File>
+    <Text Style="color:#545454; ">Hargen sends 3ut18.tmp.jpg</Text>
+  </Invitation>
+  <InvitationResponse Date="2/4/2010" Time="2:38:01 PM" DateTime="2010-02-04T06:38:01.388Z" SessionID="1">
+    <From>
+      <User FriendlyName="Hargen"/>
+    </From>
+    <File>D:\Documents\My Received Files\3ut18.tmp.jpg</File>
+    <Text Style="color:#545454; ">You have successfully received D:\Documents\My Received Files\3ut18.tmp.jpg from Hargen.</Text>
+  </InvitationResponse>
+</Log>

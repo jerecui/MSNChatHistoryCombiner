@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='MessageLog.xsl'?>
+<Log FirstSessionID="1" LastSessionID="2">
+  <Message Date="1/20/2010" Time="10:28:44 AM" DateTime="2010-01-20T18:28:44.418Z" SessionID="1">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="Hargen"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">这两天过得好吗</Text>
+  </Message>
+  <Message Date="1/20/2010" Time="10:29:18 AM" DateTime="2010-01-20T18:29:18.466Z" SessionID="1">
+    <From>
+      <User FriendlyName="Hargen"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:MS Shell Dlg; color:#000000; ">:) 还可以 </Text>
+  </Message>
+  <Message Date="1/20/2010" Time="10:29:29 AM" DateTime="2010-01-20T18:29:29.344Z" SessionID="1">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="Hargen"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">那就是不怎么好啦 :D</Text>
+  </Message>
+  <Message Date="1/20/2010" Time="10:29:50 AM" DateTime="2010-01-20T18:29:50.283Z" SessionID="2">
+    <From>
+      <User FriendlyName="Hargen"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:MS Shell Dlg; color:#000000; ">没什么好 也没什么不好</Text>
+  </Message>
+</Log>
