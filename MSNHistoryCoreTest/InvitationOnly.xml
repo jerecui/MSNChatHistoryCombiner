@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <?xml-stylesheet type='text/xsl' href='MessageLog.xsl'?>
-<Log FirstSessionID="1" LastSessionID="1">
+<Log FirstSessionID="1" LastSessionID="2">
   <Invitation Date="2/4/2010" Time="2:37:42 PM" DateTime="2010-02-04T06:37:42.403Z" SessionID="1">
     <From>
       <User FriendlyName="Hargen"/>
@@ -14,5 +14,22 @@
     </From>
     <File>D:\Documents\My Received Files\3ut18.tmp.jpg</File>
     <Text Style="color:#545454; ">You have successfully received D:\Documents\My Received Files\3ut18.tmp.jpg from Hargen.</Text>
+  </InvitationResponse>
+  <Invitation Date="2/2/2010" Time="11:36:41 AM" DateTime="2010-02-02T03:36:41.884Z" SessionID="2">
+    <From>
+      <User FriendlyName="菲児"/>
+    </From>
+    <Application>a Computer Call</Application>
+    <Text Style="color:#545454; ">
+      菲児 is calling you.
+      Accept (Alt+C)	 Decline (Alt+D)
+    </Text>
+  </Invitation>
+  <InvitationResponse Date="2/2/2010" Time="11:36:42 AM" DateTime="2010-02-02T03:36:42.057Z" SessionID="2">
+    <From>
+      <User FriendlyName="菲児"/>
+    </From>
+    <Application>a Computer Call</Application>
+    <Text Style="color:#800000; ">You missed a call from 菲児.</Text>
   </InvitationResponse>
 </Log>

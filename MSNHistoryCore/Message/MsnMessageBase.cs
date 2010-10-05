@@ -6,11 +6,11 @@ using System.Xml;
 
 namespace MsnHistoryCore
 {
-    public abstract class MsnMessage
+    public abstract class MsnMessageBase
     {
         protected XmlNode MessageXmlNode { get; set; }
 
-        public MsnMessage(XmlNode messageXmlNode)
+        public MsnMessageBase(XmlNode messageXmlNode)
         {
             this.MessageXmlNode = messageXmlNode;
 

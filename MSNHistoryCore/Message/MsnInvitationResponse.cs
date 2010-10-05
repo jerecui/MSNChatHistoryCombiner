@@ -6,9 +6,9 @@ using System.Xml;
 
 namespace MsnHistoryCore
 {
-    public sealed class MsnInvitationResponseMessage : MsnInvitationMessage
+    public sealed class MsnInvitationResponse : MsnInvitation
     {
-        public MsnInvitationResponseMessage(XmlNode node)
+        public MsnInvitationResponse(XmlNode node)
             : base(node)
         {
 

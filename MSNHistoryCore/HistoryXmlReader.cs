@@ -27,34 +27,40 @@ namespace MsnHistoryCore
             xmlDoc.Load(xmlReader);
 
             var log = new MsnLog();
-
             ReadHead(xmlDoc, log);
 
-            ReadLogBasicProperty(xmlDoc, log);
+            var rootNode = ReadLogBasicProperty(xmlDoc, log);
 
-            var messages = xmlDoc.SelectNodes("Log/Message");
-            foreach (XmlNode message in messages)
-            {
-                log.Messages.Add(new MsnTextMessage(message));
-            }
+            ReadMessages(log, rootNode);
 
             return log;
         }
 
+        #region Private
         private static void ReadHead(XmlDocument xmlDoc, MsnLog log)
         {
             log.Declaration = xmlDoc.FirstChild as XmlDeclaration;
             log.Xsl = xmlDoc.FirstChild.NextSibling as XmlProcessingInstruction;
         }
 
-        private static void ReadLogBasicProperty(XmlDocument xmlDoc, MsnLog log)
+        private static XmlNode ReadLogBasicProperty(XmlDocument xmlDoc, MsnLog log)
         {
             var logNode = xmlDoc.SelectSingleNode("Log");
             log.FirstSessionID = int.Parse(logNode.Attributes["FirstSessionID"].Value);
             log.LastSessionID = int.Parse(logNode.Attributes["LastSessionID"].Value);
+
+            return logNode;
         }
 
-       
 
+        private static void ReadMessages(MsnLog log, XmlNode rootNode)
+        {
+            var messages = rootNode.SelectNodes("*");
+            foreach (XmlNode msgNode in messages)
+            {
+                log.Messages.Add(MsnMessageFactory.Create(msgNode));
+            }
+        }
+        #endregion
     }
 }

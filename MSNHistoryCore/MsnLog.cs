@@ -17,13 +17,13 @@ namespace MsnHistoryCore
 
         public int LastSessionID { get; set; }
 
-        public List<MsnMessage> Messages
+        public List<MsnMessageBase> Messages
         {
             get
             {
-                if (_messages == null) _messages = new List<MsnMessage>();
+                if (_messages == null) _messages = new List<MsnMessageBase>();
                 return _messages;
             }
-        } private List<MsnMessage> _messages;
+        } private List<MsnMessageBase> _messages;
     }
 }

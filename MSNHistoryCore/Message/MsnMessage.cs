@@ -6,9 +6,9 @@ using System.Xml;
 
 namespace MsnHistoryCore
 {
-    public class MsnTextMessage : MsnMessage
+    public class MsnMessage : MsnMessageBase
     {
-        public MsnTextMessage(XmlNode messageXmlNode)
+        public MsnMessage(XmlNode messageXmlNode)
             : base(messageXmlNode)
         {
             if (this.MessageXmlNode != null)
