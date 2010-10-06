@@ -43,6 +43,8 @@ namespace MsnHistoryCore
             MergeSingle();
 
             MergeMultiple();
+
+            this.ReleaseResource();
         }
 
         private void MergeMultiple()
@@ -71,10 +73,11 @@ namespace MsnHistoryCore
 
             var fileName = GetMergedFileName();
 
-            //log
-            InternalLogger.Write("handling " + new FileInfo(fileName).Name.GetHistoryFileUniqueName());
-
             this.MergedMsnLog.Save(fileName);
+
+            //log
+            InternalLogger.Write("merged " + new FileInfo(fileName).Name.GetHistoryFileUniqueName());
+
         }
 
         private string GetMergedFileName()
@@ -99,6 +102,9 @@ namespace MsnHistoryCore
 
                 var targetFilePath = Path.Combine(MsnContext.Instance.TargetDirectoryPath, targetFileName);
                 File.Copy(source.XmlFilePath, targetFilePath, true);
+
+                InternalLogger.Write("copied " + targetFileName);
+
             }
 
         }
@@ -143,5 +149,11 @@ namespace MsnHistoryCore
                 });
         }
 
+
+        internal void ReleaseResource()
+        {
+            this.MergedMsnLog = null;
+            this.SourceLogs.Clear();
+        }
     }
 }

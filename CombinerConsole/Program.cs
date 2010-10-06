@@ -56,8 +56,8 @@ namespace CombinerConsole
 
             InternalLogger.InitializeLogger(ConsoleLogger.Instance);
 
-            MsnHistoryFileScanner.Instance.Scan();
-            MsnHistoryFileScanner.Instance.Merge();
+            MsnHistoryCombineWorker.Instance.Scan();
+            MsnHistoryCombineWorker.Instance.Merge();
         }
 
         private static bool CheckParam()

@@ -51,7 +51,7 @@
     <Compile Include="Message\MsnInvitation.cs" />
     <Compile Include="Message\MsnInvitationResponse.cs" />
     <Compile Include="MsnHistoryCombiner.cs" />
-    <Compile Include="MsnHistoryFileScanner.cs" />
+    <Compile Include="MsnHistoryCombineWorker.cs" />
     <Compile Include="Message\MsnJoin.cs" />
     <Compile Include="MsnLog.cs" />
     <Compile Include="Message\MsnMessageBase.cs" />
@@ -61,6 +61,11 @@
     <Compile Include="MsnUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingletonBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MessageLog.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

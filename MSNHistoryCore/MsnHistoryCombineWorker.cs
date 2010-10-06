@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace MsnHistoryCore
 {
-    public class MsnHistoryFileScanner : SingletonBase<MsnHistoryFileScanner>
+    public class MsnHistoryCombineWorker : SingletonBase<MsnHistoryCombineWorker>
     {
-        public MsnHistoryFileScanner()
+        public MsnHistoryCombineWorker()
         {
 
         }
@@ -22,9 +22,9 @@ namespace MsnHistoryCore
             for (int outIndex = 0; outIndex < itemArray.Length; outIndex++)
             {
                 var currentFileName = itemArray[outIndex];
-                if (MsnHistoryFileScanner.Instance.HistoryRepository[currentFileName]) continue;
+                if (MsnHistoryCombineWorker.Instance.HistoryRepository[currentFileName]) continue;
                 var currentFileInfo = new FileInfo(currentFileName);
-                MsnHistoryFileScanner.Instance.HistoryRepository[currentFileName] = true;
+                MsnHistoryCombineWorker.Instance.HistoryRepository[currentFileName] = true;
 
                 var combiner = new MsnHistoryCombiner();
                 combiner.XmlFilePaths.Add(currentFileName);
@@ -32,12 +32,12 @@ namespace MsnHistoryCore
                 for (int innerIndex = outIndex + 1; innerIndex < itemArray.Length; innerIndex++)
                 {
                     var comparingFileName = itemArray[innerIndex];
-                    if (MsnHistoryFileScanner.Instance.HistoryRepository[comparingFileName]) continue;
+                    if (MsnHistoryCombineWorker.Instance.HistoryRepository[comparingFileName]) continue;
 
                     var comparingFileInfo = new FileInfo(comparingFileName);
                     if (currentFileInfo.Name.IsSameFriendHistory(comparingFileInfo.Name))
                     {
-                        MsnHistoryFileScanner.Instance.HistoryRepository[comparingFileName] = true;
+                        MsnHistoryCombineWorker.Instance.HistoryRepository[comparingFileName] = true;
 
                         combiner.XmlFilePaths.Add(comparingFileName);
                     }
@@ -51,7 +51,7 @@ namespace MsnHistoryCore
 
         public void Clear()
         {
-            MsnHistoryFileScanner.Instance.HistoryRepository.Clear();
+            MsnHistoryCombineWorker.Instance.HistoryRepository.Clear();
         }
 
         public void Scan()
@@ -67,6 +67,8 @@ namespace MsnHistoryCore
                             {
                                 if (xmlFile.Name.IsMatchedMsnHistoryFile())
                                     this.HistoryRepository.Add(xmlFile.FullName, false);
+                                else
+                                    MsnContext.Instance.ComplexedXmlFilePath.Add(xmlFile.FullName);
                             });
                     }
                 });
@@ -76,7 +78,37 @@ namespace MsnHistoryCore
         {
             var combineList = this.Group();
 
-            combineList.ForEach(item => item.Merge());
+            foreach (var item in combineList) item.Merge();
+
+            CopyXslFile();
+
+            NotifyDoneMessage();
+        }
+
+        internal void CopyXslFile()
+        {
+            var targetDirInfo = new DirectoryInfo(MsnContext.Instance.TargetDirectoryPath);
+            var fileName = "MessageLog.xsl";
+            var existXsl = targetDirInfo.GetFiles("MessageLog.xsl").Length > 0;
+
+            if (!existXsl)
+            {
+                var xsl = new FileInfo(fileName);
+                var targeFileName = Path.Combine(targetDirInfo.FullName, xsl.Name);
+                if (xsl.Exists)
+                {
+                    xsl.CopyTo(targeFileName);
+                }
+            }
+        }
+
+        private void NotifyDoneMessage()
+        {
+            InternalLogger.Write("DONE!");
+
+            if (MsnContext.Instance.ComplexedXmlFilePath.Count > 0)
+                InternalLogger.Write("But you need to handle the following files manually:");
+            MsnContext.Instance.ComplexedXmlFilePath.ForEach(item => InternalLogger.Write(item));
         }
 
     }
