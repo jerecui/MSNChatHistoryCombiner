@@ -45,11 +45,19 @@
   <ItemGroup>
     <Compile Include="HistoryXmlReaderTests.cs" />
     <Compile Include="MsnExtensionsTests.cs" />
+    <Compile Include="MsnHistoryCombinerTests.cs" />
     <Compile Include="MsnHistoryFileScannerTests.cs" />
     <Compile Include="MsnMessageFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestConsts.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="zhuexe1301966960 - Archive%282%29.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="zhuexe1301966960 - Archive.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="InvitationOnly.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -58,7 +66,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="hargen.xml" />
+    <Content Include="zhuexe1301966960.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MSNHistoryCore\MsnHistoryCore.csproj">

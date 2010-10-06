@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='MessageLog.xsl'?>
+<Log FirstSessionID="1" LastSessionID="1">
+  <Message Date="1/15/2010" Time="3:07:22 PM" DateTime="2010-01-15T23:07:22.631Z" SessionID="1">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">hi</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:07:23 PM" DateTime="2010-01-15T23:07:23.049Z" SessionID="1">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">最近怎么样</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:07:34 PM" DateTime="2010-01-15T23:07:34.494Z" SessionID="1">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="zhuexe"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">老样</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:08:10 PM" DateTime="2010-01-15T23:08:10.379Z" SessionID="1">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">没有激情的囡人</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:08:15 PM" DateTime="2010-01-15T23:08:15.791Z" SessionID="1">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">:)</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:08:19 PM" DateTime="2010-01-15T23:08:19.075Z" SessionID="1">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="zhuexe"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">:)</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:08:24 PM" DateTime="2010-01-15T23:08:24.777Z" SessionID="1">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="zhuexe"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">是呀</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:08:34 PM" DateTime="2010-01-15T23:08:34.966Z" SessionID="1">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">你们用。net？</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:08:35 PM" DateTime="2010-01-15T23:08:35.560Z" SessionID="1">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="zhuexe"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">你囡人多 所以过的好</Text>
+  </Message>
+  <Message Date="1/15/2010" Time="3:08:37 PM" DateTime="2010-01-15T23:08:37.583Z" SessionID="1">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Segoe UI; color:#000000; ">还在用</Text>
+  </Message>
+</Log>

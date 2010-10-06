@@ -43,6 +43,7 @@
     <Compile Include="HistoryXmlReader.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="InternalLogger.cs" />
+    <Compile Include="MsnContext.cs" />
     <Compile Include="MsnDirection.cs" />
     <Compile Include="MsnDirectionType.cs" />
     <Compile Include="Extension\MsnExtensions.cs" />

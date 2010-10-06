@@ -19,16 +19,20 @@ namespace MsnHistoryCore
             if (string.IsNullOrEmpty(msnHistoryFile)) throw new ArgumentNullException("The file name can not be null");
             if (File.Exists(msnHistoryFile) == false) throw new FileNotFoundException("Can not find file" + msnHistoryFile);
 
+            var log = default(MsnLog);
+
             var xmlDoc = new XmlDocument();
-            var xmlReader = new XmlTextReader(msnHistoryFile);
-            xmlDoc.Load(xmlReader);
+            using (var xmlReader = new XmlTextReader(msnHistoryFile))
+            {
+                xmlDoc.Load(xmlReader);
 
-            var log = new MsnLog(){XmlFilePath = new FileInfo(msnHistoryFile).FullName};
-            ReadHead(xmlDoc, log);
+                log= new MsnLog() { XmlFilePath = new FileInfo(msnHistoryFile).FullName };
+                ReadHead(xmlDoc, log);
 
-            var rootNode = ReadLogBasicProperty(xmlDoc, log);
+                var rootNode = ReadLogBasicProperty(xmlDoc, log);
 
-            ReadMessages(log, rootNode);
+                ReadMessages(log, rootNode);
+            }
 
             return log;
         }

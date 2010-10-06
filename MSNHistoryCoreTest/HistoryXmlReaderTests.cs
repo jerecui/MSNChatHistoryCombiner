@@ -10,13 +10,12 @@ namespace MsnHistoryCoreTest
     [TestFixture]
     public class HistoryXmlReaderTests
     {
-        public const string MessageOnlyFileName = "MessageOnly.xml";
-        public const string InvitationOnlyFileName = "InvitationOnly.xml";
+      
 
         [Test]
         public void Read_Anything_ReturnCorrectLogObject()
         {
-            var log = HistoryXmlReader.Instance.Read(MessageOnlyFileName);
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_MESSAGEONLY);
 
             Assert.AreEqual(1, log.FirstSessionID);
             Assert.AreEqual(2, log.LastSessionID);
@@ -26,7 +25,7 @@ namespace MsnHistoryCoreTest
         [Test]
         public void Read_MessageOnly_ShouldReturnCorrectMessageItemsCount()
         {
-            var log = HistoryXmlReader.Instance.Read(MessageOnlyFileName);
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_MESSAGEONLY);
 
             Assert.AreEqual(4, log.Messages.Count);
         }
@@ -34,7 +33,7 @@ namespace MsnHistoryCoreTest
         [Test]
         public void Read_MessageOnly_FirstNodeIsCorrect()
         {
-            var log = HistoryXmlReader.Instance.Read(MessageOnlyFileName);
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_MESSAGEONLY);
 
             var firstMessage = log.Messages[0] as MsnMessage;
 
@@ -55,7 +54,7 @@ namespace MsnHistoryCoreTest
         [Test]
         public void Read_InvitatoinOnly_ShouldReturnCorrectItemCount()
         {
-            var log = HistoryXmlReader.Instance.Read(InvitationOnlyFileName);
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_INVITATIONONLY);
 
             var itemCount = log.Messages.Count;
 
@@ -65,7 +64,7 @@ namespace MsnHistoryCoreTest
         [Test]
         public void Read_InvitatoinOlny_InvitationItemDetailInformationIsCorrect()
         {
-            var log = HistoryXmlReader.Instance.Read(InvitationOnlyFileName);
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_INVITATIONONLY);
 
             var invitaion = log.Messages[0] as MsnInvitation;
 
@@ -83,7 +82,7 @@ namespace MsnHistoryCoreTest
         [Test]
         public void Read_InvitatoinOlny_InvitationResponseItemDetailInformationIsCorrect()
         {
-            var log = HistoryXmlReader.Instance.Read(InvitationOnlyFileName);
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_INVITATIONONLY);
 
             var invitaion = log.Messages[3] as MsnInvitation;
 

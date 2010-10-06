@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='MessageLog.xsl'?>
+<Log FirstSessionID="70" LastSessionID="70">
+  <Message Date="2010/7/27" Time="17:16:35" DateTime="2010-07-27T09:16:32.095Z" SessionID="70">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="zhuexe"/>
+    </To>
+    <Text Style="font-family:Verdana; color:#800080; ">。。。</Text>
+  </Message>
+  <Message Date="2010/7/27" Time="17:16:41" DateTime="2010-07-27T09:16:41.607Z" SessionID="70">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Microsoft YaHei ; color:#000000; ">gdcc估计没涨</Text>
+  </Message>
+  <Message Date="2010/7/27" Time="17:16:46" DateTime="2010-07-27T09:16:46.273Z" SessionID="70">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Microsoft YaHei ; color:#000000; ">今年跑了很多人</Text>
+  </Message>
+  <Message Date="2010/7/27" Time="17:17:45" DateTime="2010-07-27T09:17:45.155Z" SessionID="70">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="zhuexe"/>
+    </To>
+    <Text Style="font-family:Verdana; color:#800080; ">哦</Text>
+  </Message>
+  <Message Date="2010/7/27" Time="17:17:58" DateTime="2010-07-27T09:17:58.360Z" SessionID="70">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Microsoft YaHei ; color:#000000; ">不过有点复苏，开始招人</Text>
+  </Message>
+  <Message Date="2010/7/27" Time="17:18:06" DateTime="2010-07-27T09:18:06.528Z" SessionID="70">
+    <From>
+      <User FriendlyName="zhuexe"/>
+    </From>
+    <To>
+      <User FriendlyName="Jerry"/>
+    </To>
+    <Text Style="font-family:Microsoft YaHei ; color:#000000; ">去年基本就没招</Text>
+  </Message>
+  <Message Date="2010/7/27" Time="17:18:07" DateTime="2010-07-27T09:18:07.902Z" SessionID="70">
+    <From>
+      <User FriendlyName="Jerry"/>
+    </From>
+    <To>
+      <User FriendlyName="zhuexe"/>
+    </To>
+    <Text Style="font-family:Verdana; color:#800080; ">哦</Text>
+  </Message>
+</Log>

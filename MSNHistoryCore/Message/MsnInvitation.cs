@@ -6,22 +6,19 @@ using System.Xml;
 
 namespace MsnHistoryCore
 {
-    public class MsnInvitation: MsnMessageBase
+    public class MsnInvitation : MsnMessageBase
     {
         public MsnInvitation(XmlNode node)
             : base(node)
         {
             if (this.MessageXmlNode != null)
             {
-                this.From = new MsnDirection(this.MessageXmlNode.SelectSingleNode("From"), MsnDirectionType.From);
 
                 this.File = this.GetSingleChildInnerText("File");
                 this.Application = this.GetSingleChildInnerText("Application");
             }
         }
 
-        public MsnDirection From { get; set; }
-        
         public string File { get; set; }
 
         public string Application { get; set; }
@@ -36,6 +33,25 @@ namespace MsnHistoryCore
             }
 
             return childNodeInnerTextValue;
+        }
+
+        public override void AppendOwnSpecial(XmlElement messageElement)
+        {
+            if (string.IsNullOrEmpty(this.File) == false)
+            {
+                var fileElement = messageElement.OwnerDocument.CreateElement("File");
+                fileElement.InnerText = this.File;
+
+                messageElement.AppendChild(fileElement);
+            }
+
+            if (string.IsNullOrEmpty(this.Application) == false)
+            {
+                var applicationElement = messageElement.OwnerDocument.CreateElement("Application");
+                applicationElement.InnerText = this.Application;
+
+                messageElement.AppendChild(applicationElement);
+            }
         }
     }
 }

@@ -34,5 +34,18 @@ namespace MsnHistoryCore
 
             return result;
         }
+
+        public static string GetHistoryFileUniqueName(this string fileName)
+        {
+            var regex = new Regex(MSN_FILE_PATTERN, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var match = regex.Match(fileName);
+
+            if (match.Success)
+            {
+                return match.Groups["name"].Value + ".xml";
+            }
+
+            return string.Empty;
+        }
     }
 }
