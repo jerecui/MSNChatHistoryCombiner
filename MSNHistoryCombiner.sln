@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsnHistoryCore", "MSNHistor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsnHistoryCoreTest", "MSNHistoryCoreTest\MsnHistoryCoreTest.csproj", "{7E8F0063-753E-44CA-BE63-B5B566B67A61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinerConsole", "CombinerConsole\CombinerConsole.csproj", "{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{7E8F0063-753E-44CA-BE63-B5B566B67A61}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7E8F0063-753E-44CA-BE63-B5B566B67A61}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7E8F0063-753E-44CA-BE63-B5B566B67A61}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Debug|x86.ActiveCfg = Debug|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Debug|x86.Build.0 = Debug|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Release|Any CPU.ActiveCfg = Release|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Release|x86.ActiveCfg = Release|x86
+		{4CB70ACC-E22B-4FD7-AF18-C7D876AE5ACB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

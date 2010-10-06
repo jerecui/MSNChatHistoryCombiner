@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
+﻿using System.Xml;
 
 namespace MsnHistoryCore
 {
@@ -14,7 +10,9 @@ namespace MsnHistoryCore
 
             if (this.TextXmlNode != null)
             {
-                this.Style = this.TextXmlNode.Attributes["Style"].Value;
+                if (this.TextXmlNode.Attributes.GetNamedItem("Style") != null)
+                    this.Style = this.TextXmlNode.Attributes["Style"].Value;
+
                 this.Value = this.TextXmlNode.InnerText;
             }
         }

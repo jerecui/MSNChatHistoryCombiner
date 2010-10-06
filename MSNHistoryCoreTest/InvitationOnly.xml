@@ -32,4 +32,11 @@
     <Application>a Computer Call</Application>
     <Text Style="color:#800000; ">You missed a call from 菲児.</Text>
   </InvitationResponse>
+  <InvitationResponse Date="8/3/2006" Time="6:09:40 PM" DateTime="2006-08-03T10:09:40.656Z" SessionID="36">
+    <From>
+      <User FriendlyName="Hargen 老骨头，新思想" />
+    </From>
+    <Application></Application>
+    <Text>Hargen 老骨头，新思想 sent the wink "Kiss"</Text>
+  </InvitationResponse>
 </Log>

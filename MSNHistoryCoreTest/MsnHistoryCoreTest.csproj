@@ -52,6 +52,10 @@
     <Compile Include="TestConsts.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LeaveOnly.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="zhuexe1301966960 - Archive%282%29.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml;
 
 namespace MsnHistoryCore
@@ -20,7 +17,7 @@ namespace MsnHistoryCore
             var instance = default(MsnMessageBase);
             if (msgType == null)
             {
-                InternalLogger.LogInstance.Write(msgClassName + " class does not exist! The file uri is " + node.BaseURI);
+                InternalLogger.Write(msgClassName + " class does not exist! The file uri is " + node.BaseURI);
             }
             else
             {

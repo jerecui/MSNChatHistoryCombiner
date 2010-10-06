@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace MsnHistoryCore
 {
@@ -54,6 +52,31 @@ namespace MsnHistoryCore
         public void Clear()
         {
             MsnHistoryFileScanner.Instance.HistoryRepository.Clear();
+        }
+
+        public void Scan()
+        {
+            this.Clear();
+
+            MsnContext.Instance.SourceDirectories.ForEach(source =>
+                {
+                    if (Directory.Exists(source))
+                    {
+                        var xmlFiles = new DirectoryInfo(source).GetFiles("*.xml");
+                        xmlFiles.ToList<FileInfo>().ForEach(xmlFile =>
+                            {
+                                if (xmlFile.Name.IsMatchedMsnHistoryFile())
+                                    this.HistoryRepository.Add(xmlFile.FullName, false);
+                            });
+                    }
+                });
+        }
+
+        public void Merge()
+        {
+            var combineList = this.Group();
+
+            combineList.ForEach(item => item.Merge());
         }
 
     }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace MsnHistoryCore
@@ -13,7 +10,7 @@ namespace MsnHistoryCore
             return dateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffK");
         }
 
-        private const string MSN_FILE_PATTERN = @"(?<name>\w+)\s*(-\s*Archive(\s*\(\d*\))?)?\.xml";
+        private const string MSN_FILE_PATTERN = @"^(?<name>\w+)\s*(-\s*Archive(\s*\(\d*\))?)?\.xml$";
         public static bool IsSameFriendHistory(this string fileName, string otherFileName)
         {
             var regex = new Regex(MSN_FILE_PATTERN, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -46,6 +43,15 @@ namespace MsnHistoryCore
             }
 
             return string.Empty;
+        }
+
+        public static bool IsMatchedMsnHistoryFile(this string fileName)
+        {
+            var regex = new Regex(MSN_FILE_PATTERN, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var match = regex.Match(fileName);
+
+            return match.Success;
+
         }
     }
 }

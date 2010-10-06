@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
+﻿using System.Xml;
 
 namespace MsnHistoryCore
 {
@@ -37,7 +33,7 @@ namespace MsnHistoryCore
 
         public override void AppendOwnSpecial(XmlElement messageElement)
         {
-            if (string.IsNullOrEmpty(this.File) == false)
+            if (this.File != null)
             {
                 var fileElement = messageElement.OwnerDocument.CreateElement("File");
                 fileElement.InnerText = this.File;
@@ -45,7 +41,7 @@ namespace MsnHistoryCore
                 messageElement.AppendChild(fileElement);
             }
 
-            if (string.IsNullOrEmpty(this.Application) == false)
+            if (this.Application != null)
             {
                 var applicationElement = messageElement.OwnerDocument.CreateElement("Application");
                 applicationElement.InnerText = this.Application;

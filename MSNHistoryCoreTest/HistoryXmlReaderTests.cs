@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using MsnHistoryCore;
 using NUnit.Framework;
-using MsnHistoryCore;
 
 namespace MsnHistoryCoreTest
 {
@@ -58,7 +54,7 @@ namespace MsnHistoryCoreTest
 
             var itemCount = log.Messages.Count;
 
-            Assert.AreEqual(4, itemCount);
+            Assert.AreEqual(5, itemCount);
         }
 
         [Test]
@@ -95,6 +91,32 @@ namespace MsnHistoryCoreTest
             Assert.AreEqual("菲児", invitaion.From.User[0].FriendlyName);
             Assert.AreEqual("a Computer Call", invitaion.Application);
             Assert.AreEqual("You missed a call from 菲児.", invitaion.Text.Value);
+        }
+
+
+        //////////////////////////////
+        [Test]
+        public void Read_LeaveOnly_ShouldReturnCorrectItemCount()
+        {
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_LEAVEONLY);
+
+            var itemCount = log.Messages.Count;
+
+            Assert.AreEqual(1, itemCount);
+        }
+
+        [Test]
+        public void Read_LeaveOnly_DetailInformationIsCorrect()
+        {
+            var log = HistoryXmlReader.Instance.Read(TestConsts.FILENAME_LEAVEONLY);
+
+            var leaveMessage = log.Messages[0] as MsnLeave;
+
+            Assert.AreEqual("9/12/2006", leaveMessage.Date);
+            Assert.AreEqual("1:34:22 PM", leaveMessage.Time);
+            Assert.AreEqual("2006-09-12T05:34:22.671Z", leaveMessage.UniversalTime.ToMsnUniversalString());
+            Assert.AreEqual("柴松洁", leaveMessage.User.FriendlyName);
+            Assert.AreEqual("柴松洁 has left the conversation.", leaveMessage.Text.Value);
         }
     }
 }

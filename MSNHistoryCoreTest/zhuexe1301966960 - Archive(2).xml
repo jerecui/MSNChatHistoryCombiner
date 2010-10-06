@@ -55,13 +55,8 @@
     </To>
     <Text Style="font-family:Microsoft YaHei ; color:#000000; ">去年基本就没招</Text>
   </Message>
-  <Message Date="2010/7/27" Time="17:18:07" DateTime="2010-07-27T09:18:07.902Z" SessionID="70">
-    <From>
-      <User FriendlyName="Jerry"/>
-    </From>
-    <To>
-      <User FriendlyName="zhuexe"/>
-    </To>
-    <Text Style="font-family:Verdana; color:#800080; ">哦</Text>
-  </Message>
+  <Leave Date="9/12/2006" Time="1:34:22 PM" DateTime="2006-09-12T05:34:22.671Z" SessionID="18">
+    <User FriendlyName="柴松洁"/>
+    <Text Style="color:#800000; ">柴松洁 has left the conversation.</Text>
+  </Leave>
 </Log>

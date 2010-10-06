@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Reflection;
-using System.Xml.Xsl;
 using System.Xml;
+using System.IO;
 
 namespace MsnHistoryCore
 {
@@ -31,14 +28,15 @@ namespace MsnHistoryCore
         public void Save(string fileName)
         {
             if (this.Messages.Count == 0 || string.IsNullOrEmpty(fileName)) return;
+            if (File.Exists(fileName)) File.Delete(fileName);
 
             var xml = new XmlDocument();
             xml.AppendChild(xml.CreateXmlDeclaration(this.Declaration.Version, this.Declaration.Encoding, this.Declaration.Standalone));
             xml.AppendChild(xml.CreateProcessingInstruction(this.Xsl.Target, this.Xsl.Data));
 
             var root = xml.CreateElement("Log");
-            root.SetAttribute("FirstSessionID", "1");
-            root.SetAttribute("LastSessionID", "1");
+            root.SetAttribute("FirstSessionID", this.Messages[0].SessionID.ToString());
+            root.SetAttribute("LastSessionID", this.Messages[this.Messages.Count - 1].SessionID.ToString());
 
             xml.AppendChild(root);
             this.Messages.ForEach(messageNode =>

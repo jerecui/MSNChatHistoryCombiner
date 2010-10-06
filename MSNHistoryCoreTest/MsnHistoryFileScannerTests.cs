@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using MsnHistoryCore;
 using NUnit.Framework;
-using System.IO;
-using MsnHistoryCore;
 
 namespace MsnHistoryCoreTest
 {
@@ -19,13 +14,18 @@ namespace MsnHistoryCoreTest
             MsnHistoryFileScanner.Instance.HistoryRepository[@"C:\salley13143760055638.xml"] = false;
             MsnHistoryFileScanner.Instance.HistoryRepository[@"D:\salley13143760055638.xml"] = false;
             MsnHistoryFileScanner.Instance.HistoryRepository[@"C:\cchsky1583658416.xml"] = false;
-            MsnHistoryFileScanner.Instance.HistoryRepository[@"C:\cchsky1583658416.xml - Archive(1).xml"] = false;
-            MsnHistoryFileScanner.Instance.HistoryRepository[@"C:\cchsky1583658416.xml - Archive(2).xml"] = false;
+            MsnHistoryFileScanner.Instance.HistoryRepository[@"C:\cchsky1583658416 - Archive(1).xml"] = false;
+            MsnHistoryFileScanner.Instance.HistoryRepository[@"C:\cchsky1583658416 - Archive(2).xml"] = false;
             MsnHistoryFileScanner.Instance.HistoryRepository[@"D:\scwang30002781717253 - Archive(2).xml"] = false;
 
             var msnHistoryCombiners = MsnHistoryFileScanner.Instance.Group();
 
             Assert.AreEqual(3, msnHistoryCombiners.Count);
+
+            var total = 0;
+            msnHistoryCombiners.ForEach(item=>total +=item.XmlFilePaths.Count);
+
+            Assert.AreEqual(MsnHistoryFileScanner.Instance.HistoryRepository.Count, total);
         }
     }
 }

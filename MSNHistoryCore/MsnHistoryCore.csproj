@@ -43,6 +43,7 @@
     <Compile Include="HistoryXmlReader.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="InternalLogger.cs" />
+    <Compile Include="Message\MsnLeave.cs" />
     <Compile Include="MsnContext.cs" />
     <Compile Include="MsnDirection.cs" />
     <Compile Include="MsnDirectionType.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Message\MsnInvitationResponse.cs" />
     <Compile Include="MsnHistoryCombiner.cs" />
     <Compile Include="MsnHistoryFileScanner.cs" />
+    <Compile Include="Message\MsnJoin.cs" />
     <Compile Include="MsnLog.cs" />
     <Compile Include="Message\MsnMessageBase.cs" />
     <Compile Include="Message\MsnMessageFactory.cs" />

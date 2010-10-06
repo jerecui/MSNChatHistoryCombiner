@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Xml;
 
 namespace MsnHistoryCore
@@ -34,6 +31,10 @@ namespace MsnHistoryCore
             {
                 if (_user == null) _user = new List<MsnUser>();
                 return _user;
+            }
+            internal set
+            {
+                _user = value;
             }
         } private List<MsnUser> _user;
 
