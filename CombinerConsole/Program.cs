@@ -17,14 +17,14 @@ namespace CombinerConsole
             {
                 ShowHelpMessage();
                 return;
-            } 
+            }
 
             if (args.Length % 2 != 0)
             {
                 var firstCmd = args[0].Replace("-", string.Empty).Replace("/", string.Empty);
                 //if (string.Compare(firstCmd, "h", StringComparison.OrdinalIgnoreCase) != 0
                 //    && string.Compare(firstCmd, "?", StringComparison.OrdinalIgnoreCase) != 0)
-                    ShowHelpMessage();
+                ShowHelpMessage();
 
                 return;
             }
@@ -41,7 +41,8 @@ namespace CombinerConsole
                 {
                     case "-s":
                         var souces = cmdValue.Split(',');
-                        MsnContext.Instance.SourceDirectories.AddRange(souces);
+                        for (int sIndex = 0; sIndex < souces.Length; sIndex++)
+                        { MsnContext.Instance.SourceDirectories.Add(souces[sIndex].Trim()); }
                         break;
                     case "-t":
                         MsnContext.Instance.TargetDirectoryPath = cmdValue;
@@ -111,6 +112,7 @@ Usage: MSNHistoryCombinerConsole.exe [-s Path(use comma to split)] | [-t TargetD
 -h:
 -?:
     help
+Example: MSNHistoryCombinerConsole.exe -s C:\History1,C:\History2 -t C:\HistoryFinal
 ====================================
 ");
         }
